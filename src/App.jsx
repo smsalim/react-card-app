@@ -14,10 +14,7 @@ function App(){
       <div className='card-container'>
         {cards.map((card)=>{
           return (
-          <div key={card.id} className='card'>
-          <h1>{card.title}</h1>
-          <p>{card.content}</p>
-        </div>
+            <Card key={card.id} title={card.title} content={card.content}></Card>
         )
         })}
       </div>
