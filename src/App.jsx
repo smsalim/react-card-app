@@ -1,5 +1,5 @@
 import './App.css'
-
+import Card from './Card'
 
 function App(){
   const cards = [
@@ -9,6 +9,11 @@ function App(){
     {id : 4, title:"Card 4", content:"content"},
     {id : 5, title:"Card 5", content:"content"}
   ]
+    const CardGenerator=()=>{
+      cards.push({title:"Card Title",content:"Content"})
+      console.log(cards)
+    }
+
   return (
     <>
       <div className='card-container'>
@@ -18,6 +23,7 @@ function App(){
         )
         })}
       </div>
+      <button onClick={CardGenerator}>Card Generator</button>
     </>
   )
 }
