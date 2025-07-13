@@ -1,28 +1,28 @@
+import { useState } from 'react'
 import './App.css'
 import Card from './Card'
 
 function App(){
-  const cards = [
-    {id : 1, title:"Card 1", content:"content"},
-    {id : 2, title:"Card 2", content:"content"},
-    {id : 3, title:"Card 3", content:"content"},
-    {id : 4, title:"Card 4", content:"content"},
-    {id : 5, title:"Card 5", content:"content"},
-    {id : 6, title:"Card 6", content:"content"}
-  ]
+  const [cards, setCards] = useState([{title:"Card 1", content:"content"}])
+
     const CardGenerator=()=>{
-      cards.push({title:"Card Title",content:"Content"})
-      console.log(cards)
+      const newObject = {
+        title:`Card ${cards.length+1}`,
+        content:`Content ${cards.length+1}`
+      }
+      setCards([...cards, newObject])
     }
 
   return (
     <>
-      <div className='card-container'>
-        {cards.map((card)=>{
-          return (<Card key={card.id} title={card.title} content={card.content}/>)
-        })}
+      <div className='app'>
+        <button onClick={CardGenerator}>Card Generator</button>
+        <div className='card-container'>
+          {cards.map((card, index)=>{
+            return (<Card key={index} title={card.title} content={card.content}/>)
+          })}
+        </div>
       </div>
-      <button onClick={CardGenerator}>Card Generator</button>
     </>
   )
 }
