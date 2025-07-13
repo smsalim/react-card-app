@@ -7,7 +7,8 @@ function App(){
     {id : 2, title:"Card 2", content:"content"},
     {id : 3, title:"Card 3", content:"content"},
     {id : 4, title:"Card 4", content:"content"},
-    {id : 5, title:"Card 5", content:"content"}
+    {id : 5, title:"Card 5", content:"content"},
+    {id : 6, title:"Card 6", content:"content"}
   ]
     const CardGenerator=()=>{
       cards.push({title:"Card Title",content:"Content"})
@@ -18,9 +19,7 @@ function App(){
     <>
       <div className='card-container'>
         {cards.map((card)=>{
-          return (
-            <Card key={card.id} title={card.title} content={card.content}></Card>
-        )
+          return (<Card key={card.id} title={card.title} content={card.content}/>)
         })}
       </div>
       <button onClick={CardGenerator}>Card Generator</button>

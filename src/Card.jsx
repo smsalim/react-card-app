@@ -1,7 +1,8 @@
 import './Card.css'
+
 const Card = ({title, content})=>{
     return (
-        <div className="card">
+        <div className='card'>
             <h1>{title}</h1>
             <p>{content}</p>
         </div>
